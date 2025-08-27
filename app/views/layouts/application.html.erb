@@ -17,12 +17,39 @@
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
 
+    <%# Semantic UI CSS from CDN %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
+    
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="ui small inverted menu">
+      <div class= "ui container"> 
+        <a class="item"> Home </a>
+
+        <a class="item"> Messages </a>
+        
+        <div class="right menu">
+          <div class="ui dropdown item">
+            Language <i class="dropdown icon"></i>
+            <div class="menu">
+              <a class="item">English</a>
+              <a class="item">Russian</a>
+              <a class="item">Spanish</a>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="ui primary button">Sign Up</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ui container">
+      <%= yield %>
+    </div>
   </body>
 </html>
